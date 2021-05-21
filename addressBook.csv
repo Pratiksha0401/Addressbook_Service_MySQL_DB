@@ -1,0 +1,9 @@
+Field,Type,Null,Key,Default,Extra
+FirstName,varchar(20),NO,,NULL,
+LastName,varchar(20),NO,,NULL,
+Address,varchar(50),NO,,NULL,
+City,varchar(20),NO,,NULL,
+State,varchar(20),NO,,NULL,
+Zip,varchar(6),NO,,NULL,
+PhoneNo,varchar(12),NO,,NULL,
+Email_ID,char(50),NO,,NULL,
