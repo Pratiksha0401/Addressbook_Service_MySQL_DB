@@ -43,4 +43,12 @@ INSERT INTO addressbook(FirstName, LastName, Address, City, State, Zip, PhoneNo,
 
 #UC6 ability to retrive person belonging to city or state from addressbook
 select * from addressbook where City = 'Bhandara';
- select * from addressbook where State = 'Maharashtra';				
+ select * from addressbook where State = 'Maharashtra';		
+ 
+#UC7
+#getting the count in addressbook by  city name
+ select City,count(*) from addressbook where City = 'Bhandara';
+ 
+  #getting the count in addressbook by  state name
+ select State,count(*) from addressbook where State = 'Maharashtra'; 
+ 

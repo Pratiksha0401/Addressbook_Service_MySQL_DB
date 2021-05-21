@@ -1,3 +1,2 @@
-FirstName,LastName,Address,City,State,Zip,PhoneNo,Email_ID
-Nikita,Takhare,Javaharnagar,Bhandara,Maharashtra,441904,2135469787,nikitatakhre@gmail.com
-Mayuri,Makadey,"Dalal Complex",Bhandara,Maharashtra,441904,2135469787,mayuri10@gmail.com
+State,count(*)
+Maharashtra,2
