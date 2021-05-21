@@ -33,4 +33,8 @@ update addressbook set
                     Email_ID='mayuri@gmail.com'
 				where FirstName='Mayuri';
 select * from addressbook;
+
+#UC5 Ability to delete contact using person's name
+delete from addressbook where FirstName='Mayuri';
+select * from addressbook;
 					
