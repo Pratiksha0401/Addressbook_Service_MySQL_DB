@@ -37,4 +37,10 @@ select * from addressbook;
 #UC5 Ability to delete contact using person's name
 delete from addressbook where FirstName='Mayuri';
 select * from addressbook;
-					
+
+INSERT INTO addressbook(FirstName, LastName, Address, City, State, Zip, PhoneNo, Email_ID)
+	VALUES ('Mayuri', 'Makadey', 'Dalal Complex', 'Bhandara', 'Maharashtra', '441904', '2135469787', 'mayuri10@gmail.com');
+
+#UC6 ability to retrive person belonging to city or state from addressbook
+select * from addressbook where City = 'Bhandara';
+ select * from addressbook where State = 'Maharashtra';				
