@@ -15,5 +15,5 @@ create table addressbook
     PhoneNo varchar(12) not null, 
     Email_ID char(50) not null
 );
-
+describe addressbook;
 					
