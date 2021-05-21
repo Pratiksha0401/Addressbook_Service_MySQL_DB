@@ -1,9 +1,3 @@
-Field,Type,Null,Key,Default,Extra
-FirstName,varchar(20),NO,,NULL,
-LastName,varchar(20),NO,,NULL,
-Address,varchar(50),NO,,NULL,
-City,varchar(20),NO,,NULL,
-State,varchar(20),NO,,NULL,
-Zip,varchar(6),NO,,NULL,
-PhoneNo,varchar(12),NO,,NULL,
-Email_ID,char(50),NO,,NULL,
+FirstName,LastName,Address,City,State,Zip,PhoneNo,Email_ID
+Mayuri,Makadey,"Dalal Complex",Bhandara,Maharashtra,441904,2135469787,mayuri10@gmail.com
+Nikita,Takhare,Javaharnagar,Bhandara,Maharashtra,441904,2135469787,nikitatakhre@gmail.com
