@@ -23,4 +23,14 @@ INSERT INTO addressbook(FirstName, LastName, Address, City, State, Zip, PhoneNo,
 INSERT INTO addressbook(FirstName, LastName, Address, City, State, Zip, PhoneNo, Email_ID)
 	VALUES ('Nikita', 'Takhare', 'Javaharnagar', 'Bhandara', 'Maharashtra', '441904', '2135469787', 'nikitatakhre@gmail.com');
 select * from addressbook;    
+
+#UC4 Ability to edit contact using first name    
+update addressbook set
+					Address='Keshav Nagar',
+                    City='Lakhani',
+                    Zip='489750',
+                    PhoneNo='5468971321',
+                    Email_ID='mayuri@gmail.com'
+				where FirstName='Mayuri';
+select * from addressbook;
 					
