@@ -52,3 +52,6 @@ select * from addressbook where City = 'Bhandara';
   #getting the count in addressbook by  state name
  select State,count(*) from addressbook where State = 'Maharashtra'; 
  
+ #UC8 showing addressbook sorted alphabeticaly by name
+ select * from addressbook where city = 'Bhandara' order by FirstName;
+ 
