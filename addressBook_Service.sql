@@ -131,3 +131,22 @@ select @@last_insert_id ;
 insert into friendsaddressbook (AddressbookID) values (@@last_insert_id);
 select * from friendsaddressbook;
 select * from Addressbook;
+
+#UC13 
+#refactor uc6 i.e. retrive data from address book using city or state with new table structure 
+select * from addressbook a1, familyaddressbook f1 where a1.ID=f1.AddressbookID  and city='Bhandara';
+select * from addressbook a1, friendsaddressbook friend1 where a1.ID=friend1.AddressbookID and city='Bhandara';
+select * from addressbook a1, professionaladdressbook p1 where a1.ID=p1.AddressbookID and city='Bhandara';
+
+#refactor uc7 i.e. grt count by city or state with new table structure 
+select count(id) from addressbook a1, familyaddressbook f1 where a1.ID=f1.AddressbookID  and city='Bhandara'; #Count:2
+select count(id) from addressbook a1, friendsaddressbook friend1 where a1.ID=friend1.AddressbookID and city='Bhandara'; #Count:1
+select count(id) from addressbook a1, professionaladdressbook p1 where a1.ID=p1.AddressbookID and city='Bhandara'; #Count:0
+
+#refactor uc8 i.e. sort alphabetically address book using city or state with new table structure 
+select * from addressbook a1, familyaddressbook f1 where a1.ID=f1.AddressbookID  and city='Bhandara' order by FirstName;
+select * from addressbook a1, friendsaddressbook friend1 where a1.ID=friend1.AddressbookID and city='Bhandara' order by FirstName;
+select * from addressbook a1, professionaladdressbook p1 where a1.ID=p1.AddressbookID and city='Bhandara' order by FirstName;
+
+
+
