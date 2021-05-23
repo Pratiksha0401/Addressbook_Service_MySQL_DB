@@ -2,6 +2,7 @@ show databases;
 
 #UC1 creqte database for addressbook
 create database Addressbook_Service;
+use Addressbook_service;
 
 #UC2 create address book table with its attributes
 create table addressbook 
@@ -29,7 +30,8 @@ INSERT INTO addressbook(FirstName, LastName, Address, City, State, Zip, PhoneNo,
 INSERT INTO addressbook(FirstName, LastName, Address, City, State, Zip, PhoneNo, Email_ID)
 				VALUES ('Shital', 'Negi', 'Kota', 'Dehradun', 'Utterpradesh', '563200', '3335669787', 'negia@yahoo.com'),    
 						('Minal', 'Rawat', 'Bajaj Complex', 'Bangalore', 'Karnataka', '500214', '9135688787', 'minal@rediffmail.com');    
-select * from addressbook;    
+select * from addressbook;  
+alter table addressbook add ID int(3) not null auto_increment primary key first;  
 
 #UC4 Ability to edit contact using first name    
 update addressbook set
@@ -80,3 +82,52 @@ Select Count(FirstName) From AddressBook where AddressBookType = 'Family' order 
 Select Count(FirstName) From AddressBook where AddressBookType = 'Friends' order by FirstName;		#Count 2
 Select Count(FirstName) From AddressBook where AddressBookType = 'Profession' order by FirstName;	#Count 2
 
+
+#creating different address books as family , friends amd profession ,all having reference of addressbook
+
+ CREATE table FriendsAddressbook(
+Friend_ID     int Not Null auto_increment,
+AddressbookID int ,
+Primary key (Friend_ID) ,
+FOREIGN KEY (AddressbookID) REFERENCES AddressBook(ID) ON DELETE CASCADE
+ );
+insert into FriendsAddressbook (AddressbookID) values ('5'),('7');
+select * from FriendsAddressbook;
+ 
+
+CREATE table FamilyAddressbook(
+Family_ID     int Not Null auto_increment,
+AddressbookID int ,
+Primary key (Family_ID) ,
+FOREIGN KEY (AddressbookID) REFERENCES AddressBook(ID) ON DELETE CASCADE
+ ); 
+insert into FamilyAddressbook (AddressbookID) values ('2'),('3'); 
+select * from FamilyAddressbook;
+ 
+
+CREATE table ProfessionalAddressbook(
+Profession_ID     int Not Null auto_increment,
+AddressbookID int ,
+Primary key (Profession_ID) ,
+FOREIGN KEY (AddressbookID) REFERENCES AddressBook(ID) ON DELETE CASCADE
+ );  
+insert into ProfessionalAddressbook (AddressbookID) values ('4'),('6'); 
+select * from ProfessionalAddressbook; 
+
+
+#UC11 insert contact in familyaddressbook by using addressbook class
+ INSERT INTO addressbook(FirstName, LastName, Address, City, State, Zip, PhoneNo, Email_ID,AddressBookName,addressBookType)
+					VALUES ('Rupali', 'Takhare', 'Paris Complex', 'Nagpur', 'Maharashtra', '481204', '9935009787', 'mayuri10@gmail.com', 'Addressbook1', 'Family');
+select @@last_insert_id ;
+insert into familyaddressbook (AddressbookID) values (@@last_insert_id);
+select * from FamilyAddressbook;
+select * from addressbook;
+
+
+#UC 11 insert contact in friendsaddressbook by using addressbook class
+ INSERT INTO addressbook(FirstName, LastName, Address, City, State, Zip, PhoneNo, Email_ID,AddressBookName,addressBookType)
+					VALUES ('Dipali', 'Shahare', 'Mahda Colony', 'Chandrapur', 'Maharashtra', '400204', '9555009787', 'shaharedipali@gmail.com', 'Addressbook3', 'Friend');
+select @@last_insert_id ;
+insert into friendsaddressbook (AddressbookID) values (@@last_insert_id);
+select * from friendsaddressbook;
+select * from Addressbook;
