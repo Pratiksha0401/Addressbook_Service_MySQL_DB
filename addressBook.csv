@@ -1,3 +1,7 @@
-FirstName,LastName,Address,City,State,Zip,PhoneNo,Email_ID
-Mayuri,Makadey,"Dalal Complex",Bhandara,Maharashtra,441904,2135469787,mayuri10@gmail.com
-Nikita,Takhare,Javaharnagar,Bhandara,Maharashtra,441904,2135469787,nikitatakhre@gmail.com
+FirstName,LastName,Address,City,State,Zip,PhoneNo,Email_ID,AddressBookName,AddressBookType
+Nikita,Takhare,Javaharnagar,Bhandara,Maharashtra,441904,2135469787,nikitatakhre@gmail.com,AddressBook3,Family
+Pranali,Badole,Sakoli,Bhandara,Maharashtra,478904,2546009787,pranali@gmail.com,AddressBook1,Family
+Soniya,Mesharam,Tumser,Gondia,Utterpradesh,563214,7135669787,soniya@gmail.com,AddressBook2,Profession
+Shital,Negi,Kota,Dehradun,Utterpradesh,563200,3335669787,negia@yahoo.com,AddressBook3,Friends
+Minal,Rawat,"Bajaj Complex",Bangalore,Karnataka,500214,9135688787,minal@rediffmail.com,AddressBook1,Profession
+Mayuri,Makadey,"Dalal Complex",Bhandara,Maharashtra,441904,2135469787,mayuri10@gmail.com,AddressBook2,Friends

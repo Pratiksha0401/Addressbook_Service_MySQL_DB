@@ -22,6 +22,13 @@ INSERT INTO addressbook(FirstName, LastName, Address, City, State, Zip, PhoneNo,
 	VALUES ('Mayuri', 'Makadey', 'Dalal Complex', 'Bhandara', 'Maharashtra', '441904', '2135469787', 'mayuri10@gmail.com');
 INSERT INTO addressbook(FirstName, LastName, Address, City, State, Zip, PhoneNo, Email_ID)
 	VALUES ('Nikita', 'Takhare', 'Javaharnagar', 'Bhandara', 'Maharashtra', '441904', '2135469787', 'nikitatakhre@gmail.com');
+INSERT INTO addressbook(FirstName, LastName, Address, City, State, Zip, PhoneNo, Email_ID)
+	VALUES ('Pranali', 'Badole', 'Sakoli', 'Bhandara', 'Maharashtra', '478904', '2546009787', 'pranali@gmail.com');
+INSERT INTO addressbook(FirstName, LastName, Address, City, State, Zip, PhoneNo, Email_ID)
+	VALUES ('Soniya', 'Mesharam', 'Tumser', 'Gondia', 'Utterpradesh', '563214', '7135669787', 'soniya@gmail.com');
+INSERT INTO addressbook(FirstName, LastName, Address, City, State, Zip, PhoneNo, Email_ID)
+				VALUES ('Shital', 'Negi', 'Kota', 'Dehradun', 'Utterpradesh', '563200', '3335669787', 'negia@yahoo.com'),    
+						('Minal', 'Rawat', 'Bajaj Complex', 'Bangalore', 'Karnataka', '500214', '9135688787', 'minal@rediffmail.com');    
 select * from addressbook;    
 
 #UC4 Ability to edit contact using first name    
@@ -43,15 +50,28 @@ INSERT INTO addressbook(FirstName, LastName, Address, City, State, Zip, PhoneNo,
 
 #UC6 ability to retrive person belonging to city or state from addressbook
 select * from addressbook where City = 'Bhandara';
- select * from addressbook where State = 'Maharashtra';		
+select * from addressbook where State = 'Maharashtra';		
  
-#UC7
+ #UC7
 #getting the count in addressbook by  city name
- select City,count(*) from addressbook where City = 'Bhandara';
+select City,count(*) from addressbook where City = 'Bhandara';   #count 3
  
-  #getting the count in addressbook by  state name
- select State,count(*) from addressbook where State = 'Maharashtra'; 
+#getting the count in addressbook by  state name
+select State,count(*) from addressbook where State = 'Maharashtra';   # count 3
  
- #UC8 showing addressbook sorted alphabeticaly by name
- select * from addressbook where city = 'Bhandara' order by FirstName;
+#UC8 showing addressbook sorted alphabeticaly by name
+select * from addressbook where city = 'Bhandara' order by FirstName;
+select * from addressbook  order by FirstName;
  
+#UC9 identify each addressbook with its name and type
+Alter table AddressBook add AddressBookName varchar(45) Not Null after Email_Id;
+Alter table AddressBook add AddressBookType varchar(45) Not Null after AddressBookName; 
+ 
+Update AddressBook set AddressBookName= 'AddressBook1' where FirstName  = 'Minal' or FirstName  = 'Pranali';
+Update AddressBook set AddressBookName ='AddressBook2' where FirstName  = 'Soniya' or FirstName  = 'Mayuri';
+Update AddressBook set AddressBookName = 'AddressBook3' where FirstName  = 'Nikita' or FirstName  = 'Shital';
+Update AddressBook set AddressBookType = 'Family' where FirstName  = 'Nikita'  or FirstName  = 'Pranali';
+Update AddressBook set AddressBookType = 'Friends' where FirstName  = 'Mayuri' or FirstName  = 'Shital' ;
+Update AddressBook set AddressBookType = 'Profession' where FirstName  = 'Minal' or FirstName  = 'Soniya';  
+ 
+select * from addressbook; 
